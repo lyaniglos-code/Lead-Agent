@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { HowItWorks } from "@/components/HowItWorks";
+import { LeadFormSection } from "@/components/LeadFormSection";
 import { Footer } from "@/components/Footer";
 
 /**
@@ -24,6 +25,7 @@ export default function Home() {
         <Hero />
         <Features />
         <HowItWorks />
+        <LeadFormSection />
       </main>
       <Footer />
     </>

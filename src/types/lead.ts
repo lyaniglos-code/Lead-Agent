@@ -9,15 +9,13 @@
 
 /**
  * The raw data a visitor submits through the lead-capture form.
- * This is the minimal, human-entered information — no AI fields yet.
+ *
+ * We DON'T redefine the shape here. It's derived from our zod schema (the
+ * single source of truth) and re-exported so the rest of the app can keep
+ * importing lead types from one convenient place (`@/types/lead`).
  */
-export interface LeadInput {
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-  message: string;
-}
+export type { LeadInput } from "@/lib/validations/lead";
+import type { LeadInput } from "@/lib/validations/lead";
 
 /**
  * The lifecycle status of a lead as it moves through our pipeline.
