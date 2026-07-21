@@ -1,30 +1,31 @@
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { Features } from "@/components/Features";
+import { HowItWorks } from "@/components/HowItWorks";
+import { Footer } from "@/components/Footer";
+
 /**
- * Home page — Server Component (the default in the App Router).
+ * Home page — the SaaS landing page (Milestone 2).
  *
- * This is intentionally a minimal, clean SHELL for Milestone 1. In Milestone 2
- * we'll build this out into a full SaaS landing page (hero, features, CTA).
- * Keeping it simple now lets us verify the whole toolchain — TypeScript,
- * Tailwind, fonts, dev server — renders correctly before adding complexity.
+ * Notice this file is now just COMPOSITION: it imports self-contained sections
+ * and arranges them. Each section owns its own markup and copy. This is the
+ * payoff of building reusable components — the page reads like an outline, and
+ * you can reorder or swap sections without touching their internals.
+ *
+ * `<main className="flex-1">` grows to fill the space between the sticky Header
+ * and the Footer, keeping the footer at the bottom even on short pages (the
+ * body is `min-h-full flex flex-col`, set in layout.tsx).
  */
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-      <span className="mb-4 rounded-full border border-black/10 px-3 py-1 text-sm font-medium text-foreground/70 dark:border-white/15">
-        AI Lead Follow-Up Agent
-      </span>
-
-      <h1 className="max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">
-        Never let a lead go cold again.
-      </h1>
-
-      <p className="mt-4 max-w-md text-lg text-foreground/60">
-        Capture, score, and follow up with every lead automatically — powered by
-        AI.
-      </p>
-
-      <p className="mt-10 text-sm text-foreground/40">
-        🚧 Under construction — Milestone 1 complete.
-      </p>
-    </main>
+    <>
+      <Header />
+      <main className="flex-1">
+        <Hero />
+        <Features />
+        <HowItWorks />
+      </main>
+      <Footer />
+    </>
   );
 }

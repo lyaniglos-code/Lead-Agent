@@ -10,6 +10,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Brand color as a single source of truth. Defining these here (Tailwind v4
+     reads the @theme block) makes utility classes like `bg-brand`,
+     `text-brand`, and `hover:bg-brand-dark` available everywhere. Want to
+     rebrand from indigo to teal later? Change these two lines only. */
+  --color-brand: #4f46e5; /* indigo-600 */
+  --color-brand-dark: #4338ca; /* indigo-700 */
 }
 
 @media (prefers-color-scheme: dark) {
