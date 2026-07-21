@@ -1,0 +1,17 @@
+# Normalize line endings across operating systems.
+# Without this, Windows checkouts use CRLF and Unix/CI uses LF, producing noisy
+# diffs where entire files appear "changed" just because of line endings.
+#
+# `text=auto` lets git decide which files are text, and `eol=lf` stores them
+# with Unix line endings in the repository — the convention CI systems and most
+# tooling expect. Git still checks them out with your OS's native endings.
+* text=auto eol=lf
+
+# Binary files git must never touch.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
